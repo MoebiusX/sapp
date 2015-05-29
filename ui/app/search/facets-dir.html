@@ -1,0 +1,27 @@
+<form>
+ <fieldset>
+  <legend>Top Section</legend>
+ <div class="facet-list">
+                                  <div class="chiclets">
+                                    <div class="btn btn-primary" ng-repeat="chiclet in selected">
+                                      <span>{{chiclet.facet}}: {{chiclet.value}}</span>
+                                      <span class="glyphicon glyphicon-remove-circle icon-white" ng-click="clear(chiclet)"></span>
+                                    </div>
+                                  </div>
+                                  <div class="facet" ng-repeat="(index, facet) in facets | object2Array">
+                                    <h3>{{ facet.__key }}</h3>
+                                    <div ng-repeat="value in facet.facetValues">
+                                      <a ng-click="select({facet: facet.__key, value: value.name})">{{value.name}} ({{value.count}})</a>
+                                    </div>
+                                  </div>
+                                </div>
+ </fieldset>
+ <br><br>
+  <fieldset>
+  <legend>Bottom Section</legend>
+  <h3>Type: <br>  </h3>
+  <h3>Status: <br></h3>
+   </fieldset>
+</form>
+
+                                
